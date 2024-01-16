@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using System.Data;
-using System.Linq;
 using Microsoft.Data.SqlClient;
 using Progamme_Etudiant;
-using static System.Net.Mime.MediaTypeNames;
 
 
 string connectionString = "Data Source=(localdb)\\BDD_ADO; Initial Catalog = dbEtudiant; Integrated Security = True; Connect Timeout = 30; Encrypt = True; Trust Server Certificate=False; Application Intent = ReadWrite; Multi Subnet Failover=False";
 
 List<Etudiant> listeEtudiants = new List<Etudiant>();
-
 
 while (true)
 {
@@ -80,7 +75,7 @@ void SaisirEtudiant()
 
         string query = "INSERT INTO etudiant (nom, prenom, numeroDeClasse, dateDeDiplome) VALUES (@Nom, @Prenom, @NumeroDeClasse, @dateDeDiplome)";
 
-        SqlCommand command = new SqlCommand(query, connection);
+         SqlCommand command = new SqlCommand(query, connection);
         {
             command.Parameters.AddWithValue("@Nom", etudiant.Nom);
             command.Parameters.AddWithValue("@Prenom", etudiant.Prenom);
@@ -88,6 +83,7 @@ void SaisirEtudiant()
             command.Parameters.AddWithValue("@dateDeDiplome", etudiant.dateDeDiplome);
 
             command.ExecuteNonQuery();
+            
         }
         Console.WriteLine("Enregistrement ajouté avec succès!\n");
 
@@ -99,25 +95,32 @@ void AfficherTousEtudiants()
     Console.WriteLine("\nListe des étudiants :");
     using (SqlConnection connection = new SqlConnection(connectionString))
     {
-        connection.Open();
 
-        string query = "SELECT nom, prenom, numeroDeClasse, dateDeDiplome FROM etudiant";
-
-        SqlCommand command = new SqlCommand(query, connection);
+        try
         {
-            SqlDataReader reader = command.ExecuteReader();
-            {
-                while (reader.Read())
-                {
-                    string nom = reader.GetString(0);
-                    string prenom = reader.GetString(1);
-                    string numeroDeClasse = reader.GetString(2);
-                    string dateDeDiplome = reader.GetString(3);
+            connection.Open();
 
-                    Console.WriteLine($"Nom : {nom}, Prénom : {prenom}, Numéro de classe : {numeroDeClasse}, Date de diplôme : {dateDeDiplome}");
+            string query = "SELECT nom, prenom, numeroDeClasse, dateDeDiplome FROM etudiant";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                {
+                    while (reader.Read())
+                    {
+                        string nom = reader.GetString(0);
+                        string prenom = reader.GetString(1);
+                        string numeroDeClasse = reader.GetString(2);
+                        string dateDeDiplome = reader.GetString(3);
+
+                        Console.WriteLine($"Nom : {nom}, Prénom : {prenom}, Numéro de classe : {numeroDeClasse}, Date de diplôme : {dateDeDiplome}");
+                    }
                 }
             }
+        } catch (Exception e) {
+            Console.WriteLine(e.Message);
         }
+        Console.WriteLine("");
     }
 }
 
@@ -167,8 +170,8 @@ void SupprimerEtudiant()
     {
         connection.Open();
 
-        string query = "DELETE FROM etudiant WHERE @Nom = nom";
-
+        string query = "DELETE FROM etudiant WHERE @Nom = nomEtudiant";
+        
         SqlCommand command = new SqlCommand(query, connection);
         {
             command.Parameters.AddWithValue("@Nom", nomEtudiant);
