@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado", "Ado\Ado.csproj", "{2035641C-FE7F-48AE-84E9-B89ED62ED12E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ado", "Ado\Ado.csproj", "{2035641C-FE7F-48AE-84E9-B89ED62ED12E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Progamme Etudiant", "Progamme Etudiant\Progamme Etudiant.csproj", "{B4FE99CE-1E84-4C64-BD65-367F0284E830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Progamme Etudiant", "Progamme Etudiant\Progamme Etudiant.csproj", "{B4FE99CE-1E84-4C64-BD65-367F0284E830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion de commande", "Gestion de commande\Gestion de commande.csproj", "{4865D016-C599-4189-A7A8-8DB21D28F493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B4FE99CE-1E84-4C64-BD65-367F0284E830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4FE99CE-1E84-4C64-BD65-367F0284E830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4FE99CE-1E84-4C64-BD65-367F0284E830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4865D016-C599-4189-A7A8-8DB21D28F493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4865D016-C599-4189-A7A8-8DB21D28F493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4865D016-C599-4189-A7A8-8DB21D28F493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4865D016-C599-4189-A7A8-8DB21D28F493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
