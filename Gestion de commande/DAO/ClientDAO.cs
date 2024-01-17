@@ -1,44 +1,22 @@
-﻿using Gestion_de_commande;
+﻿using Gestion_de_commande.Classes;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Data.SqlClient;
 
-
-
-namespace Gestion_de_commande
+namespace Gestion_de_commande.DAO
 {
-    internal class Client
+    internal class ClientDAO
     {
-        public int ID { get; set; }
-        public string Nom { get; set; }
-        public string Prenom { get; set; }
-        public string Adresse { get; set; }
-        public string CodePostal { get; set; }
-        public string Ville { get; set; }
-        public string Telephone { get; set; }
-
-        public List<Commande> Commandes { get; set; }
 
 
-        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=commande;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-        public Client(int iD, string nom, string prenom, string adresse, string codePostal, string ville, string telephone, List<Commande> commandes)
-        {
-            ID = iD;
-            Nom = nom;
-            Prenom = prenom;
-            Adresse = adresse;
-            CodePostal = codePostal;
-            Ville = ville;
-            Telephone = telephone;
-            Commandes = commandes;
-        }
 
-         void AfficherTousLesClients()
+
+        public string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=commande;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+
+        public void AfficherTousLesClients()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -59,7 +37,7 @@ namespace Gestion_de_commande
             }
         }
 
-         void AjouterClient(Client client)
+        public void AjouterClient(Client client)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -82,7 +60,7 @@ namespace Gestion_de_commande
             }
         }
 
-         void EditerClient(int clientId, Client nouveauClient)
+        public void EditerClient(int clientId, Client nouveauClient)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -107,7 +85,7 @@ namespace Gestion_de_commande
             }
         }
 
-         void SupprimerClient(int clientId)
+        public void SupprimerClient(int clientId)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -130,7 +108,7 @@ namespace Gestion_de_commande
             }
         }
 
-         void AfficherDetailClient(int clientId)
+        public void AfficherDetailClient(int clientId)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -173,24 +151,10 @@ namespace Gestion_de_commande
             }
         }
 
-         void AjouterCommande(int clientId, Commande commande)
+        internal static void AjouterClient(ClientDAO client)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string query = "INSERT INTO Commande (ClientID, Date, Total) " +
-                               "VALUES (@ClientID, @Date, @Total)";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ClientID", clientId);
-                    command.Parameters.AddWithValue("@Date", commande.Date);
-                    command.Parameters.AddWithValue("@Total", commande.Total);
-
-                    command.ExecuteNonQuery();
-                }
-            }
+            throw new NotImplementedException();
         }
     }
 }
+    

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 
 
-namespace Gestion_de_commande
+namespace Gestion_de_commande.Classes
 {
     internal class Commande
     {
@@ -20,7 +20,10 @@ namespace Gestion_de_commande
 
         public Client Client { get; set; }
 
-
+        public override string ToString()
+        {
+            return $"{ID} {ClientID}";
+        }
         public Commande(int iD, int clientID, DateTime date, decimal total, Client client)
         {
             ID = iD;
