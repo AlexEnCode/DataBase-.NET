@@ -37,7 +37,7 @@ namespace Gestion_de_commande.Classes
            
             while (true)
             {
-                AfficherMenu();
+                
 
                 Console.Write("Choisissez une option : ");
                 string choix = Console.ReadLine();
