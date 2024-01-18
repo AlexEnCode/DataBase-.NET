@@ -100,12 +100,7 @@ void AfficherTousLesPersonnages()
 
 static void AfficherMenu()
 {
-    Console.WriteLine("  ____                     _   _                  ");
-    Console.WriteLine(" |  _ \\ ___ _ __ ___  ___ | \\ | | __ _  __ _  ___ ");
-    Console.WriteLine(" | |_) / _ \\ '__/ __|/ _ \\|  \\| |/ _` |/ _` |/ _ \\");
-    Console.WriteLine(" |  __/  __/ |  \\__ \\ (_) | |\\  | (_| | (_| |  __/");
-    Console.WriteLine(" |_|   \\___|_|  |___/\\___/|_| \\_|\\__,_|\\__, |\\___|");
-    Console.WriteLine("                                       |___/      ");
+  
     Console.WriteLine("1. Créer un personnage");
     Console.WriteLine("2. Mettre à jour un personnage");
     Console.WriteLine("3. Afficher tous les personnages");
@@ -115,9 +110,17 @@ static void AfficherMenu()
     Console.Write("Choix : ");
 }
 
+static void Titre()
+{
+    Console.WriteLine("  ____                     _   _                  ");
+    Console.WriteLine(" |  _ \\ ___ _ __ ___  ___ | \\ | | __ _  __ _  ___ ");
+    Console.WriteLine(" | |_) / _ \\ '__/ __|/ _ \\|  \\| |/ _` |/ _` |/ _ \\");
+    Console.WriteLine(" |  __/  __/ |  \\__ \\ (_) | |\\  | (_| | (_| |  __/");
+    Console.WriteLine(" |_|   \\___|_|  |___/\\___/|_| \\_|\\__,_|\\__, |\\___|");
+    Console.WriteLine("                                     |___/      ");
+}
 
-
-
+Titre();
 while (true)
 {
 

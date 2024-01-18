@@ -19,8 +19,8 @@ namespace Creation_de_personnage.Models
         public int? Degats { get; set; }
         public DateTime DateCreation { get; set; }
         public int? NombreVictime { get; set; }
-
-       
-
+    
+    
+    
     }
 }
