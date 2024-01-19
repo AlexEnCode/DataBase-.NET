@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Creation_de_personnage.Migrations
 {
-    public partial class InitialisationMigration : Migration
+    public partial class NoyelleGodo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,7 @@ namespace Creation_de_personnage.Migrations
             migrationBuilder.InsertData(
                 table: "Personnages",
                 columns: new[] { "Id", "Armure", "DateCreation", "Degats", "NombreVictime", "PointDeVie", "Pseudo" },
-                values: new object[] { 1, 4, new DateTime(2024, 1, 18, 16, 33, 10, 739, DateTimeKind.Local).AddTicks(4239), 6, 0, 12, "AlexHam" });
+                values: new object[] { 1, 4, new DateTime(2024, 1, 19, 10, 2, 27, 945, DateTimeKind.Local).AddTicks(7560), 6, 0, 12, "AlexHam" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

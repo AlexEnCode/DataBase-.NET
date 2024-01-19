@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Creation_de_personnage.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240118153310_InitialisationMigration")]
-    partial class InitialisationMigration
+    [Migration("20240119090228_NoyelleGodo")]
+    partial class NoyelleGodo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,7 +60,7 @@ namespace Creation_de_personnage.Migrations
                         {
                             Id = 1,
                             Armure = 4,
-                            DateCreation = new DateTime(2024, 1, 18, 16, 33, 10, 739, DateTimeKind.Local).AddTicks(4239),
+                            DateCreation = new DateTime(2024, 1, 19, 10, 2, 27, 945, DateTimeKind.Local).AddTicks(7560),
                             Degats = 6,
                             NombreVictime = 0,
                             PointDeVie = 12,

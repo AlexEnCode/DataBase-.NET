@@ -58,7 +58,7 @@ namespace Creation_de_personnage.Migrations
                         {
                             Id = 1,
                             Armure = 4,
-                            DateCreation = new DateTime(2024, 1, 18, 16, 33, 10, 739, DateTimeKind.Local).AddTicks(4239),
+                            DateCreation = new DateTime(2024, 1, 19, 10, 2, 27, 945, DateTimeKind.Local).AddTicks(7560),
                             Degats = 6,
                             NombreVictime = 0,
                             PointDeVie = 12,

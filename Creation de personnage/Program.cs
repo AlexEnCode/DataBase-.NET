@@ -6,11 +6,12 @@ using var context = new ApplicationDbContext();
 
 var monPersonnage = new Personnage()
 {
-Pseudo = "Kayus",
-PointDeVie = 10,
-Armure = 4,
-Degats = 6,
-NombreVictime = 1,
+    Pseudo = "Kayus",
+    PointDeVie = 10,
+    Armure = 4,
+    Degats = 6,
+    DateCreation = DateTime.Now,
+    NombreVictime = 1,
 };
 
 context.Personnages.Add(monPersonnage);
@@ -46,7 +47,7 @@ void CreerPersonnage()
 }
 
 
- void MettreAJourPersonnage()
+void MettreAJourPersonnage()
 {
 
     Console.Write("Entrez le Pseudo du personnage à modifier :");
@@ -73,16 +74,16 @@ void CreerPersonnage()
     {
         Console.WriteLine($"{Pseudo} n'a pas été trouvé.");
     }
-    }
+}
 
 void AfficherTousLesPersonnages()
 {
- context.Personnages.ToList().ForEach( l => Console.WriteLine(l.Pseudo));
-    }
+    context.Personnages.ToList().ForEach(l => Console.WriteLine(l.Pseudo));
+}
 
 
 
- void TaperPersonnage()
+void TaperPersonnage()
 {
 
 }
@@ -90,7 +91,7 @@ void AfficherTousLesPersonnages()
 
 
 
- void AfficherPersonnagesSuperieurMoyennePV()
+void AfficherPersonnagesSuperieurMoyennePV()
 {
 
 }
@@ -100,7 +101,7 @@ void AfficherTousLesPersonnages()
 
 static void AfficherMenu()
 {
-  
+
     Console.WriteLine("1. Créer un personnage");
     Console.WriteLine("2. Mettre à jour un personnage");
     Console.WriteLine("3. Afficher tous les personnages");

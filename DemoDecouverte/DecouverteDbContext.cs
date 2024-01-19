@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace DemoDecouverte
 {
@@ -18,7 +20,7 @@ namespace DemoDecouverte
         protected override void OnConfiguring(DbContextOptionBuilder optionsBuilder)
         {
             // la métode optionBuilder pour lui expliquer que nous allons utiliser une BDD SQLServer
-            optionsBuilder.UseSqlServer("Data source=(localdb)\\");
+            optionsBuilder.UseSqlServer("Data source=(localdb)\\MSSQLLocalDB;Database=Personnage;");
         }
     }
 }

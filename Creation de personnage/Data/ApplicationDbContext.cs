@@ -19,13 +19,14 @@ namespace Creation_de_personnage.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //  base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data source=(localdb)\\MSSQLLocalDB; Database=DBPersonnage;");
+            optionsBuilder.UseSqlServer("Data source=(localdb)\\MSSQLLocalDB; Database=DataBasePersonnage;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Personnage>().HasData(new Personnage() {
+            modelBuilder.Entity<Personnage>().HasData(new Personnage()
+            {
                 Id = 1,
                 Pseudo = "AlexHam",
                 PointDeVie = 12,
