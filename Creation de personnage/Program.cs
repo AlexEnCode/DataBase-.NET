@@ -50,12 +50,13 @@ void CreerPersonnage()
 void MettreAJourPersonnage()
 {
 
-    Console.Write("Entrez le Pseudo du personnage à modifier :");
-    string Pseudo = Console.ReadLine();
+    Console.Write("Entrez l' ID  du personnage à modifier :");
+    int Pseudo = Convert.ToInt32(Console.ReadLine());
     var personnage = context.Personnages.Find(Pseudo);
 
     if (personnage != null)
     {
+        Console.WriteLine($"Vous souhaitez modifier: {personnage.Pseudo}");
         Console.Write("entrez le nouveau Pseudo :");
         personnage.Pseudo = Console.ReadLine();
         Console.Write("entrez son nouveau Nombre de PV :");

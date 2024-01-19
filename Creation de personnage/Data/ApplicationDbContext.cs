@@ -19,7 +19,7 @@ namespace Creation_de_personnage.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //  base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data source=(localdb)\\MSSQLLocalDB; Database=DataBasePersonnage;");
+            optionsBuilder.UseSqlServer("Data source=(localdb)\\MSSQLLocalDB; Database=Personnage;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
